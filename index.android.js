@@ -1,53 +1,41 @@
-'use strict';
-
 import React, {
   AppRegistry,
   Component,
-  StyleSheet,
-  Text,
+  Navigator,
   View
 } from 'react-native';
 import Orientation from 'react-native-orientation';
 
+import HomeView from './page/HomeView';
+
 class TryRN extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props)
     Orientation.lockToLandscape();
   }
 
+  renderScene(route, navigator) {
+    let Component = null;
+    switch (route.name) {
+      case 'home':
+        Component = HomeView;
+        break;
+      default:
+        Component = HomeView;
+        break;
+    }
+    return <Component navigator={navigator} />;
+  }
+
   render() {
+    let initialRoute = {name: 'home'};
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <Navigator
+        initialRoute={initialRoute}
+        configureScene={() => Navigator.SceneConfigs.FadeAndroid}
+        renderScene={this.renderScene} />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('TryRN', () => TryRN);
