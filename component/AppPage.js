@@ -25,11 +25,9 @@ let styles = StyleSheet.create({
     top: 2,
     right: -6
   },
-  backButton: {
-    borderRadius: 35
-  },
-  settingButton: {
-    borderRadius: 35
+  button: {
+    width: 50,
+    height: 50
   }
 });
 
@@ -51,6 +49,25 @@ export default class AppPage extends Component {
   }
 
   render() {
+    let backButton, settingButton;
+    if (this.props.hasSettingButton) {
+      settingButton = (
+        <TouchableOpacity activeOpacity={0.6}>
+          <Image
+            source={require('../asset/image/component/setting.png')}
+            style={styles.button} />
+        </TouchableOpacity>
+      );
+    }
+    if (this.props.hasBackButton) {
+      backButton = (
+        <TouchableOpacity activeOpacity={0.6}>
+          <Image
+            source={require('../asset/image/component/back.png')}
+            style={styles.button} />
+        </TouchableOpacity>
+      );
+    }
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
@@ -59,16 +76,8 @@ export default class AppPage extends Component {
             {this.props.children}
           </View>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={styles.settingButton}
-              activeOpacity={0.6}>
-              <Image source={require('../asset/image/component/setting.png')} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.backButton}
-              activeOpacity={0.6}>
-              <Image source={require('../asset/image/component/back.png')} />
-            </TouchableOpacity>
+            {settingButton}
+            {backButton}
           </View>
         </Image>
       </View>
