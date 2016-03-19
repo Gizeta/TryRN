@@ -1,8 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
+
 import React, {
   AppRegistry,
   Component,
@@ -10,8 +7,13 @@ import React, {
   Text,
   View
 } from 'react-native';
+import Orientation from 'react-native-orientation';
 
 class TryRN extends Component {
+  componentDidMount() {
+    Orientation.lockToLandscape();
+  }
+
   render() {
     return (
       <View style={styles.container}>
