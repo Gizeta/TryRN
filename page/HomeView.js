@@ -45,7 +45,7 @@ export default class HomeView extends Component {
           <View style={decorations.top} />
           <TouchableOpacity activeOpacity={0.7}>
             <Image
-              source={require('../asset/image/home/login.png')}
+              source={require('../asset/image/home/next.png')}
               style={styles.button} />
           </TouchableOpacity>
           <View style={decorations.bottom} />
