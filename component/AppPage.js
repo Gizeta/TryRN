@@ -1,13 +1,15 @@
 import React, {
   Component,
+  Dimensions,
   Image,
   StatusBar,
   StyleSheet,
   TouchableOpacity,
   View
 } from 'react-native';
+import ViewSize from '../util/ScreenSize';
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1
   },
@@ -22,12 +24,18 @@ let styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    top: 2,
-    right: -6
+    top: 2
   },
   button: {
     width: 50,
     height: 50
+  },
+  character: {
+    position: 'absolute',
+    left: ViewSize.width * 0.1,
+    bottom: 10,
+    width: ViewSize.width * 0.25,
+    height: ViewSize.width * 0.25 * 311 / 290
   }
 });
 
@@ -35,12 +43,14 @@ export default class AppPage extends Component {
   static propTypes = {
     hasBackButton: React.PropTypes.bool,
     hasSettingButton: React.PropTypes.bool,
+    hasCharacter: React.PropTypes.bool,
     backgroundImage: React.PropTypes.number
   };
 
   static defaultProps = {
     hasBackButton: true,
     hasSettingButton: true,
+    hasCharacter: false,
     backgroundImage: require('../asset/image/home/background.png')
   };
 
@@ -49,7 +59,7 @@ export default class AppPage extends Component {
   }
 
   render() {
-    let backButton, settingButton;
+    let backButton, settingButton, characterImage;
     if (this.props.hasSettingButton) {
       settingButton = (
         <TouchableOpacity activeOpacity={0.6}>
@@ -68,6 +78,13 @@ export default class AppPage extends Component {
         </TouchableOpacity>
       );
     }
+    if (this.props.hasCharacter) {
+      characterImage = (
+        <Image
+          source={require('../asset/image/character.png')}
+          style={styles.character} />
+      );
+    }
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
@@ -75,6 +92,7 @@ export default class AppPage extends Component {
           <View style={styles.content}>
             {this.props.children}
           </View>
+          {characterImage}
           <View style={styles.buttonContainer}>
             {settingButton}
             {backButton}

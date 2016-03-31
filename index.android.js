@@ -7,6 +7,7 @@ import React, {
 import Orientation from 'react-native-orientation';
 
 import HomeView from './page/HomeView';
+import WelcomeView from './page/WelcomeView';
 
 class TryRN extends Component {
   constructor(props) {
@@ -19,6 +20,9 @@ class TryRN extends Component {
     switch (route.name) {
       case 'home':
         Component = HomeView;
+        break;
+      case 'welcome':
+        Component = WelcomeView;
         break;
       default:
         Component = HomeView;

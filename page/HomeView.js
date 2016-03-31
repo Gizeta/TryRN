@@ -43,7 +43,9 @@ export default class HomeView extends Component {
           <View style={decorations.top} />
           <Text style={styles.title}>TRAVEL with PEALE</Text>
           <View style={decorations.top} />
-          <TouchableOpacity activeOpacity={0.7}>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={(this.onNextButtonClick.bind(this))}>
             <Image
               source={require('../asset/image/home/next.png')}
               style={styles.button} />
@@ -52,5 +54,9 @@ export default class HomeView extends Component {
         </View>
       </AppPage>
     );
+  }
+
+  onNextButtonClick() {
+    this.props.navigator.push({ name: 'welcome' });
   }
 }
