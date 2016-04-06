@@ -9,6 +9,7 @@ import Orientation from 'react-native-orientation';
 import HomeView from './page/HomeView';
 import WelcomeView from './page/WelcomeView';
 import LoginView from './page/LoginView';
+import MapView from './page/MapView';
 
 class TryRN extends Component {
   constructor(props) {
@@ -27,6 +28,9 @@ class TryRN extends Component {
         break;
       case 'login':
         Component = LoginView;
+        break;
+      case 'map':
+        Component = MapView;
         break;
       default:
         Component = LoginView;

@@ -3,7 +3,6 @@ import React, {
   Image,
   StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View
 } from 'react-native';
@@ -42,6 +41,11 @@ const containerStyles = {
 }
 
 export default class LoginView extends Component {
+  constructor(props) {
+    super(props);
+    this.onLoginButtonClick = this.onLoginButtonClick.bind(this);
+  }
+
   render() {
     return (
       <AppPage hasBackButton={false} hasSettingButton={false} hasCharacter={true}>
@@ -71,7 +75,7 @@ export default class LoginView extends Component {
             <View style={containerStyles.button}>
               <TouchableOpacity
                 activeOpacity={0.7}
-                onPress={(this.onLoginButtonClick.bind(this))}>
+                onPress={this.onLoginButtonClick}>
                 <Image
                   source={require('../asset/image/login/login.png')}
                   style={styles.loginButton} />
@@ -84,6 +88,6 @@ export default class LoginView extends Component {
   }
 
   onLoginButtonClick() {
-    this.props.navigator.push({ name: 'index' });
+    this.props.navigator.push({ name: 'map' });
   }
 }
