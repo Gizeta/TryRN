@@ -8,16 +8,10 @@ import React, {
   View
 } from 'react-native';
 import AppPage from '../component/AppPage';
+import TextInputWithIcon from '../component/TextInputWithIcon';
 import ViewSize from '../util/ScreenSize';
 
 let styles = StyleSheet.create({
-  icon: {
-    flex: 0
-  },
-  textInput: {
-    height: 37,
-    flex: 1
-  },
   text: {
     fontSize: 16
   },
@@ -36,16 +30,7 @@ const containerStyles = {
   form: {
     width: ViewSize.width * 0.4,
     height: ViewSize.height * 0.57,
-    flex: 0,
-    marginLeft: 20,
     justifyContent: 'space-between'
-  },
-  input: {
-    flexDirection: 'row',
-    borderWidth: 1,
-    borderColor: 'lightgray',
-    backgroundColor: 'white',
-    flex: 0
   },
   append: {
     flexDirection: 'row',
@@ -62,30 +47,24 @@ export default class LoginView extends Component {
       <AppPage hasBackButton={false} hasSettingButton={false} hasCharacter={true}>
         <View style={containerStyles.main}>
           <View style={containerStyles.form}>
-            <View style={containerStyles.input}>
-              <Image
-                source={require('../asset/image/login/user.png')}
-                style={styles.image} />
-              <TextInput
-                style={styles.textInput}
-                underlineColorAndroid="transparent" />
+            <View>
+              <TextInputWithIcon
+                icon={require('../asset/image/login/user.png')}
+                iconHeight={37} />
             </View>
-            <View style={containerStyles.input}>
-              <Image
-                source={require('../asset/image/login/lock.png')}
-                style={styles.image} />
-              <TextInput
-                style={styles.textInput}
+            <View>
+              <TextInputWithIcon
                 secureTextEntry={true}
-                underlineColorAndroid="transparent" />
+                icon={require('../asset/image/login/lock.png')}
+                iconHeight={37} />
             </View>
             <View style={containerStyles.append}>
               <TouchableOpacity
-                activeOpacity={0.7}>
+                activeOpacity={0.3}>
                 <Text style={styles.text}>忘记登录密码？</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                activeOpacity={0.7}>
+                activeOpacity={0.3}>
                 <Text style={styles.text}>注册</Text>
               </TouchableOpacity>
             </View>
