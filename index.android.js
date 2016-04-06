@@ -8,10 +8,11 @@ import Orientation from 'react-native-orientation';
 
 import HomeView from './page/HomeView';
 import WelcomeView from './page/WelcomeView';
+import LoginView from './page/LoginView';
 
 class TryRN extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     Orientation.lockToLandscape();
   }
 
@@ -24,8 +25,11 @@ class TryRN extends Component {
       case 'welcome':
         Component = WelcomeView;
         break;
+      case 'login':
+        Component = LoginView;
+        break;
       default:
-        Component = HomeView;
+        Component = LoginView;
         break;
     }
     return <Component navigator={navigator} />;

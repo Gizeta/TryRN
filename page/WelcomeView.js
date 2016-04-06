@@ -28,6 +28,7 @@ let styles = StyleSheet.create({
     fontSize: 25
   },
   nextButtonContainer: {
+    position: 'absolute',
     top: ViewSize.height * 0.78,
     left: ViewSize.width * 0.4
   },
