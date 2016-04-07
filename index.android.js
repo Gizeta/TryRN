@@ -1,15 +1,24 @@
 import React, {
   AppRegistry,
-  Component,
-  Navigator,
-  View
+  Component
 } from 'react-native';
+import { Provider } from 'react-redux';
+import Immutable from 'immutable';
 import Orientation from 'react-native-orientation';
 
-import HomeView from './page/HomeView';
-import WelcomeView from './page/WelcomeView';
-import LoginView from './page/LoginView';
-import MapView from './page/MapView';
+import App from './app/container/App';
+import configureStore from './app/store/configureStore';
+
+const initialState = Immutable.fromJS({
+  user: {
+    name: ''
+  },
+  courses: {
+    day1: 0,
+    day2: 0
+  },
+  items: []
+});
 
 class TryRN extends Component {
   constructor(props) {
@@ -17,35 +26,11 @@ class TryRN extends Component {
     Orientation.lockToLandscape();
   }
 
-  renderScene(route, navigator) {
-    let Component = null;
-    switch (route.name) {
-      case 'home':
-        Component = HomeView;
-        break;
-      case 'welcome':
-        Component = WelcomeView;
-        break;
-      case 'login':
-        Component = LoginView;
-        break;
-      case 'map':
-        Component = MapView;
-        break;
-      default:
-        Component = LoginView;
-        break;
-    }
-    return <Component navigator={navigator} />;
-  }
-
   render() {
-    let initialRoute = {name: 'home'};
     return (
-      <Navigator
-        initialRoute={initialRoute}
-        configureScene={() => Navigator.SceneConfigs.FadeAndroid}
-        renderScene={this.renderScene} />
+      <Provider store={configureStore(initialState)}>
+        <App />
+      </Provider>
     );
   }
 }

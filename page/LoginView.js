@@ -6,9 +6,13 @@ import React, {
   TouchableOpacity,
   View
 } from 'react-native';
+import { connect } from 'react-redux';
+
 import AppPage from '../component/AppPage';
 import TextInputWithIcon from '../component/TextInputWithIcon';
 import ViewSize from '../util/ScreenSize';
+
+import * as userAction from '../app/action/user';
 
 let styles = StyleSheet.create({
   text: {
@@ -40,9 +44,13 @@ const containerStyles = {
   }
 }
 
-export default class LoginView extends Component {
+class LoginView extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      username: '',
+      password: ''
+    };
     this.onLoginButtonClick = this.onLoginButtonClick.bind(this);
   }
 
@@ -54,13 +62,17 @@ export default class LoginView extends Component {
             <View>
               <TextInputWithIcon
                 icon={require('../asset/image/login/user.png')}
-                iconHeight={37} />
+                iconHeight={37}
+                onChangeText={(text) => this.setState({username: text})}
+                value={this.state.username} />
             </View>
             <View>
               <TextInputWithIcon
                 secureTextEntry={true}
                 icon={require('../asset/image/login/lock.png')}
-                iconHeight={37} />
+                iconHeight={37}
+                onChangeText={(text) => this.setState({password: text})}
+                value={this.state.username} />
             </View>
             <View style={containerStyles.append}>
               <TouchableOpacity
@@ -88,6 +100,13 @@ export default class LoginView extends Component {
   }
 
   onLoginButtonClick() {
+    let { dispatch } = this.props;
+    dispatch(userAction.getUserInfo(this.state.username, this.state.password));
+
     this.props.navigator.push({ name: 'map' });
   }
 }
+
+export default connect(state => ({
+  state: state.get("user")
+}))(LoginView);

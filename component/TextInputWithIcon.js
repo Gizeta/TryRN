@@ -26,14 +26,16 @@ export default class TextInputWithIcon extends Component {
     secureTextEntry: React.PropTypes.bool,
     icon: React.PropTypes.number,
     iconWidth: React.PropTypes.number,
-    iconHeight: React.PropTypes.number
+    iconHeight: React.PropTypes.number,
+    onChangeText: React.PropTypes.func
   };
 
   static defaultProps = {
     secureTextEntry: false,
     icon: null,
     iconWidth: null,
-    iconHeight: null
+    iconHeight: null,
+    onChangeText: null
   };
 
   constructor(props) {
@@ -70,6 +72,7 @@ export default class TextInputWithIcon extends Component {
           style={inputStyle}
           onFocus={this.onTextInputFocus}
           onBlur={this.onTextInputBlur}
+          onChangeText={this.props.onChangeText}
           secureTextEntry={this.props.secureTextEntry}
           underlineColorAndroid="transparent" />
       </View>
