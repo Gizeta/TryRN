@@ -15,16 +15,16 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    // remove width and height to override fixed static size
-    width: null,
-    height: null
+    width: ViewSize.width,
+    height: ViewSize.height
   },
   content: {
     flex: 1
   },
   buttonContainer: {
     position: 'absolute',
-    top: 2
+    top: 4,
+    right: -3
   },
   button: {
     width: 50,
@@ -88,7 +88,7 @@ export default class AppPage extends Component {
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
-        <Image source={this.props.backgroundImage} style={styles.background}>
+        <Image source={this.props.backgroundImage} style={styles.background} resizeMode="stretch">
           <View style={styles.content}>
             {this.props.children}
           </View>
