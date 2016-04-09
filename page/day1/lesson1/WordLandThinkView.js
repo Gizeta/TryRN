@@ -9,7 +9,7 @@ import ViewSize from '../../../util/ScreenSize';
 
 let styles = StyleSheet.create({
   word: {
-    top: ViewSize.height * 0.07,
+    top: ViewSize.height * 0.08,
     left: ViewSize.width * 0.08
   },
   content: {

@@ -26,8 +26,8 @@ let styles = StyleSheet.create({
     height: ViewSize.height * 0.1
   },
   buttonContainer: {
-    top: ViewSize.height * 0.61,
-    left: ViewSize.width * 0.82
+    top: ViewSize.height * 0.59,
+    left: ViewSize.width * 0.81
   },
   content: {
     top: -ViewSize.height * 0.355
@@ -53,6 +53,7 @@ export default class WordDetailPage extends Component {
         <View style={styles.container}>
           <Image
             source={this.props.backgroundImage}
+            resizeMode="contain"
             style={styles.background}>
             <View>
               <Image

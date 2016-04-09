@@ -42,7 +42,7 @@ export default class App extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{ name: 'lesson1_1' }}
+        initialRoute={{ name: 'home' }}
         configureScene={() => Navigator.SceneConfigs.FadeAndroid}
         renderScene={this.renderScene} />
     );
