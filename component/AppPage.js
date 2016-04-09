@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
   background: {
-    flex: 1,
     width: ViewSize.width,
     height: ViewSize.height
   },
@@ -44,6 +43,7 @@ export default class AppPage extends Component {
     hasBackButton: React.PropTypes.bool,
     hasSettingButton: React.PropTypes.bool,
     hasCharacter: React.PropTypes.bool,
+    hasBackground: React.PropTypes.bool,
     backgroundImage: React.PropTypes.number
   };
 
@@ -51,6 +51,7 @@ export default class AppPage extends Component {
     hasBackButton: true,
     hasSettingButton: true,
     hasCharacter: false,
+    hasBackground: true,
     backgroundImage: require('../asset/image/home/background.png')
   };
 
@@ -59,7 +60,7 @@ export default class AppPage extends Component {
   }
 
   render() {
-    let backButton, settingButton, characterImage;
+    let backButton, settingButton, characterImage, backgroundImage;
     if (this.props.hasSettingButton) {
       settingButton = (
         <TouchableOpacity activeOpacity={0.6}>
@@ -85,10 +86,13 @@ export default class AppPage extends Component {
           style={styles.character} />
       );
     }
+    backgroundImage = this.props.hasBackground
+      ? this.props.backgroundImage
+      : require('../asset/image/transparent.png');
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
-        <Image source={this.props.backgroundImage} style={styles.background} resizeMode="stretch">
+        <Image source={backgroundImage} style={styles.background} resizeMode="stretch">
           <View style={styles.content}>
             {this.props.children}
           </View>

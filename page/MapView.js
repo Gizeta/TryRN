@@ -97,6 +97,6 @@ export default class MapView extends Component {
   }
 
   onDay1ButtonClick() {
-    this.props.navigator.push({ name: 'day1' });
+    this.props.navigator.push({ name: 'lesson1_1' });
   }
 }
