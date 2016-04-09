@@ -8,6 +8,8 @@ import WelcomeView from '../../page/WelcomeView';
 import LoginView from '../../page/LoginView';
 import MapView from '../../page/MapView';
 import Lesson1_1View from '../../page/day1/lesson1/MainView';
+import Lesson1_2View from '../../page/day1/lesson2/MainView';
+import Lesson1_3View from '../../page/day1/lesson3/MainView';
 
 export default class App extends Component {
   constructor(props) {
@@ -31,6 +33,12 @@ export default class App extends Component {
         break;
       case 'lesson1_1':
         Component = Lesson1_1View;
+        break;
+      case 'lesson1_2':
+        Component = Lesson1_2View;
+        break;
+      case 'lesson1_3':
+        Component = Lesson1_3View;
         break;
       default:
         Component = LoginView;

@@ -123,6 +123,10 @@ let styles = StyleSheet.create({
 export default class LessonView extends Component {
   constructor(props) {
     super(props);
+    this.onNavigateToSunnyPage = this.onNavigateToSunnyPage.bind(this);
+    this.onNavigateToLakePage = this.onNavigateToLakePage.bind(this);
+    this.onNavigateToFishPage = this.onNavigateToFishPage.bind(this);
+    this.onNavigateToBoatPage = this.onNavigateToBoatPage.bind(this);
     this.onNavigateToLandPage = this.onNavigateToLandPage.bind(this);
   }
 
@@ -139,6 +143,7 @@ export default class LessonView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.4}
+          onPress={this.onNavigateToSunnyPage}
           style={styles.sunnyImageContainer}>
           <Image
             source={require('../../../asset/day1/lesson1/sunny.png')}
@@ -147,6 +152,7 @@ export default class LessonView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.4}
+          onPress={this.onNavigateToBoatPage}
           style={styles.boatImageContainer}>
           <Image
             source={require('../../../asset/day1/lesson1/boat.png')}
@@ -154,6 +160,7 @@ export default class LessonView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.4}
+          onPress={this.onNavigateToFishPage}
           style={styles.fish1ImageContainer}>
           <Image
             source={require('../../../asset/day1/lesson1/fish1.png')}
@@ -161,6 +168,7 @@ export default class LessonView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.4}
+          onPress={this.onNavigateToFishPage}
           style={styles.fish2ImageContainer}>
           <Image
             source={require('../../../asset/day1/lesson1/fish2.png')}
@@ -168,6 +176,7 @@ export default class LessonView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.4}
+          onPress={this.onNavigateToFishPage}
           style={styles.fish3ImageContainer}>
           <Image
             source={require('../../../asset/day1/lesson1/fish3.png')}
@@ -189,26 +198,46 @@ export default class LessonView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.3}
+          onPress={this.onNavigateToSunnyPage}
           style={styles.sunnyTextContainer}>
           <Text style={styles.sunnyText}>sunny</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.3}
+          onPress={this.onNavigateToLakePage}
           style={styles.lakeTextContainer}>
           <Text style={styles.lakeText}>lake</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.3}
+          onPress={this.onNavigateToBoatPage}
           style={styles.boatTextContainer}>
           <Text style={styles.boatText}>boat</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.3}
+          onPress={this.onNavigateToFishPage}
           style={styles.fishTextContainer}>
           <Text style={styles.fishText}>fish</Text>
         </TouchableOpacity>
       </AppPage>
     );
+  }
+
+  onNavigateToSunnyPage() {
+    this.props.navigator.push({ name: 'word_sunny' });
+  }
+
+  onNavigateToLakePage() {
+    this.props.navigator.push({ name: 'word_lake' });
+  }
+
+  onNavigateToFishPage() {
+    this.props.navigator.push({ name: 'word_fish' });
+  }
+
+  onNavigateToBoatPage() {
+    this.props.navigator.push({ name: 'word_boat' });
   }
 
   onNavigateToLandPage() {
