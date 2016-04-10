@@ -10,7 +10,7 @@ import ViewSize from '../../../util/ScreenSize';
 let styles = StyleSheet.create({
   word: {
     top: ViewSize.height * 0.11,
-    left: ViewSize.width * 0.06
+    left: ViewSize.width * 0.08
   },
   content: {
     top: -ViewSize.height * 0.05,
@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5KnowView extends Component {
+export default class Word2KnowView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,12 +29,12 @@ export default class Word5KnowView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg3.png')}
+        backgroundImage={require('../../../asset/day1/lesson5/word2_bg3.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>land</Text>
+          <Text style={{ fontSize: 18 }}>  n.{"\n"}</Text>
+          <Text style={{ fontSize: 24 }}> 陆地</Text>
         </Text>
         <Text style={styles.content}>
           <Text style={{ fontSize: 32 }}>应该知道这些</Text>

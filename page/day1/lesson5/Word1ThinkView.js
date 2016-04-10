@@ -9,8 +9,8 @@ import ViewSize from '../../../util/ScreenSize';
 
 let styles = StyleSheet.create({
   word: {
-    top: ViewSize.height * 0.11,
-    left: ViewSize.width * 0.06
+    top: ViewSize.height * 0.1,
+    left: ViewSize.width * 0.08
   },
   content: {
     top: -ViewSize.height * 0.05,
@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5ThinkView extends Component {
+export default class Word1ThinkView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,21 +29,21 @@ export default class Word5ThinkView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg2.png')}
+        backgroundImage={require('../../../asset/day1/lesson5/word1_bg2.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>lion</Text>
+          <Text style={{ fontSize: 18 }}>  n.{"\n"}</Text>
+          <Text style={{ fontSize: 24 }}> 狮子</Text>
         </Text>
         <Text style={styles.content}>
           <Text style={{ fontSize: 32 }}>想到了这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 22 }}>healthy（健康的）/red（红色的）/colour（颜色）/grass（草）</Text>
+          <Text style={{ fontSize: 26 }}>tiger(老虎)/lioness(母狮)/strong(强壮的)/meat(肉)/animal(动物)</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 22 }}>green food（绿色食品）/greenhouse（温室）/green tea（绿茶）</Text>
+          <Text style={{ fontSize: 26 }}>lion dance(狮子舞)/sea lion(海狮)</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 22 }}>turn green（变绿）</Text>
+          <Text style={{ fontSize: 26 }}>a lion in the way(拦路虎)</Text>
         </Text>
       </WordDetailPage>
     );

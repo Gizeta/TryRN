@@ -10,7 +10,7 @@ import ViewSize from '../../../util/ScreenSize';
 let styles = StyleSheet.create({
   word: {
     top: ViewSize.height * 0.11,
-    left: ViewSize.width * 0.06
+    left: ViewSize.width * 0.08
   },
   content: {
     top: -ViewSize.height * 0.05,
@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5KnowView extends Component {
+export default class Word5ThinkView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,17 +29,21 @@ export default class Word5KnowView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg3.png')}
+        backgroundImage={require('../../../asset/day1/lesson5/word5_bg2.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>bird</Text>
+          <Text style={{ fontSize: 18 }}>  n.{"\n"}</Text>
+          <Text style={{ fontSize: 24 }}>   鸟</Text>
         </Text>
         <Text style={styles.content}>
-          <Text style={{ fontSize: 32 }}>应该知道这些</Text>
+          <Text style={{ fontSize: 32 }}>想到了这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 26 }}>目前还没有哦～</Text>
+          <Text style={{ fontSize: 22 }}>park（公园）/forest（森林）</Text>
+          <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
+          <Text style={{ fontSize: 22 }}>bird flu（禽流感）/see bird（海鸟）/water bird（水鸟）</Text>
+          <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
+          <Text style={{ fontSize: 22 }}>a bird in hand（到手的东西）/kill two birds with one stone（一举两得）</Text>
         </Text>
       </WordDetailPage>
     );

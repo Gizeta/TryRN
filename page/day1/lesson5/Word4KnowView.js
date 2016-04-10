@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5KnowView extends Component {
+export default class Word4KnowView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,17 +29,17 @@ export default class Word5KnowView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg3.png')}
+        backgroundImage={require('../../../asset/day1/lesson5/word4_bg3.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>flower</Text>
+          <Text style={{ fontSize: 18 }}>  n.{"\n"}</Text>
+          <Text style={{ fontSize: 24 }}>花；花朵</Text>
         </Text>
         <Text style={styles.content}>
           <Text style={{ fontSize: 32 }}>应该知道这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 26 }}>目前还没有哦～</Text>
+          <Text style={{ fontSize: 26 }}>中国的十大名花是梅花、牡丹、兰花、菊花、越级、杜鹃、荷花、山茶、桂花和水仙。</Text>
         </Text>
       </WordDetailPage>
     );

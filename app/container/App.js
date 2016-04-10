@@ -10,6 +10,8 @@ import MapView from '../../page/MapView';
 import Lesson1_1View from '../../page/day1/lesson1/MainView';
 import Lesson1_2View from '../../page/day1/lesson2/MainView';
 import Lesson1_3View from '../../page/day1/lesson3/MainView';
+import Lesson1_4View from '../../page/day1/lesson4/MainView';
+import Lesson1_5View from '../../page/day1/lesson5/MainView';
 
 export default class App extends Component {
   constructor(props) {
@@ -39,6 +41,12 @@ export default class App extends Component {
         break;
       case 'lesson1_3':
         Component = Lesson1_3View;
+        break;
+      case 'lesson1_4':
+        Component = Lesson1_4View;
+        break;
+      case 'lesson1_5':
+        Component = Lesson1_5View;
         break;
       default:
         Component = LoginView;

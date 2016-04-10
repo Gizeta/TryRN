@@ -9,7 +9,7 @@ import ViewSize from '../../../util/ScreenSize';
 
 let styles = StyleSheet.create({
   word: {
-    top: ViewSize.height * 0.11,
+    top: ViewSize.height * 0.1,
     left: ViewSize.width * 0.06
   },
   content: {
@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5KnowView extends Component {
+export default class Word1KnowView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,17 +29,17 @@ export default class Word5KnowView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg3.png')}
+        backgroundImage={require('../../../asset/day1/lesson4/word1_bg3.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>panda</Text>
+          <Text style={{ fontSize: 18 }}>  n.{"\n"}</Text>
+          <Text style={{ fontSize: 24 }}>   熊猫</Text>
         </Text>
         <Text style={styles.content}>
           <Text style={{ fontSize: 32 }}>应该知道这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 26 }}>目前还没有哦～</Text>
+          <Text style={{ fontSize: 26 }}>    大熊猫是中国独有的珍惜、濒危动物，刚出生的大熊猫一般只有100多克，最小的仅50多克，最大的不超过200克，相当于母亲体重的1/1000左右。人工繁殖、饲养大熊猫是有效的保护措施。</Text>
         </Text>
       </WordDetailPage>
     );

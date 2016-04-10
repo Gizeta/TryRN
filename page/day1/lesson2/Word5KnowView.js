@@ -37,7 +37,7 @@ export default class Word5KnowView extends Component {
           <Text style={{ fontSize: 24 }}>     售票处</Text>
         </Text>
         <Text style={styles.content}>
-          <Text style={{ fontSize: 32 }}>该这么用</Text>
+          <Text style={{ fontSize: 32 }}>应该知道这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
           <Text style={{ fontSize: 26 }}>目前还没有哦～</Text>
         </Text>

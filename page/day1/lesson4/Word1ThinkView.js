@@ -9,7 +9,7 @@ import ViewSize from '../../../util/ScreenSize';
 
 let styles = StyleSheet.create({
   word: {
-    top: ViewSize.height * 0.11,
+    top: ViewSize.height * 0.1,
     left: ViewSize.width * 0.06
   },
   content: {
@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5KnowView extends Component {
+export default class Word1ThinkView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,17 +29,19 @@ export default class Word5KnowView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg3.png')}
+        backgroundImage={require('../../../asset/day1/lesson4/word1_bg2.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>panda</Text>
+          <Text style={{ fontSize: 18 }}>  n.{"\n"}</Text>
+          <Text style={{ fontSize: 24 }}>   熊猫</Text>
         </Text>
         <Text style={styles.content}>
-          <Text style={{ fontSize: 32 }}>应该知道这些</Text>
+          <Text style={{ fontSize: 32 }}>想到了这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 26 }}>目前还没有哦～</Text>
+          <Text style={{ fontSize: 26 }}>white(白色的)/rare(珍贵的)/China(中国)/black(黑色的)/animal(动物)</Text>
+          <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
+          <Text style={{ fontSize: 26 }}>giant panda(大熊猫)</Text>
         </Text>
       </WordDetailPage>
     );

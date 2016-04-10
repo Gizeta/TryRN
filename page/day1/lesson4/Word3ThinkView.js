@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5KnowView extends Component {
+export default class Word3ThinkView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,17 +29,19 @@ export default class Word5KnowView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg3.png')}
+        backgroundImage={require('../../../asset/day1/lesson4/word3_bg2.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>lovely</Text>
+          <Text style={{ fontSize: 18 }}>  adj.{"\n"}</Text>
+          <Text style={{ fontSize: 20 }}>  可爱的</Text>
         </Text>
         <Text style={styles.content}>
-          <Text style={{ fontSize: 32 }}>应该知道这些</Text>
+          <Text style={{ fontSize: 32 }}>想到了这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 26 }}>目前还没有哦～</Text>
+          <Text style={{ fontSize: 26 }}>child（孩子）/flower（花）/weather（天气）</Text>
+          <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
+          <Text style={{ fontSize: 26 }}>比较级lovelier/最高级loveliest</Text>
         </Text>
       </WordDetailPage>
     );

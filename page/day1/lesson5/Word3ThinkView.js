@@ -10,7 +10,7 @@ import ViewSize from '../../../util/ScreenSize';
 let styles = StyleSheet.create({
   word: {
     top: ViewSize.height * 0.11,
-    left: ViewSize.width * 0.06
+    left: ViewSize.width * 0.08
   },
   content: {
     top: -ViewSize.height * 0.05,
@@ -19,7 +19,7 @@ let styles = StyleSheet.create({
   }
 });
 
-export default class Word5ThinkView extends Component {
+export default class Word3ThinkView extends Component {
   constructor(props) {
     super(props);
 
@@ -29,21 +29,23 @@ export default class Word5ThinkView extends Component {
   render() {
     return (
       <WordDetailPage
-        backgroundImage={require('../../../asset/day1/lesson3/word5_bg2.png')}
+        backgroundImage={require('../../../asset/day1/lesson5/word3_bg2.png')}
         onNavigateBack={this.onNavigateBack}>
         <Text style={styles.word}>
-          <Text style={{ fontSize: 24 }}>green</Text>
-          <Text style={{ fontSize: 18 }}> adj.{"\n"}</Text>
-          <Text style={{ fontSize: 24 }}> 绿色的</Text>
+          <Text style={{ fontSize: 24 }}>hill</Text>
+          <Text style={{ fontSize: 18 }}>  n.{"\n"}</Text>
+          <Text style={{ fontSize: 20 }}> 小山</Text>
         </Text>
         <Text style={styles.content}>
           <Text style={{ fontSize: 32 }}>想到了这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 22 }}>healthy（健康的）/red（红色的）/colour（颜色）/grass（草）</Text>
+          <Text style={{ fontSize: 24 }}>同义词: mountain(山)</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 22 }}>green food（绿色食品）/greenhouse（温室）/green tea（绿茶）</Text>
+          <Text style={{ fontSize: 24 }}>climb(爬)/tree(树)</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 22 }}>turn green（变绿）</Text>
+          <Text style={{ fontSize: 24 }}>hill country(山区，丘陵地)/hillside(山坡)/hilltop(山顶)</Text>
+          <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
+          <Text style={{ fontSize: 24 }}>as old as the hills(古老的)</Text>
         </Text>
       </WordDetailPage>
     );
