@@ -19,12 +19,12 @@ import WordFishView from './WordFishView';
 import WordFishHowView from './WordFishHowView';
 import WordFishThinkView from './WordFishThinkView';
 import WordFishKnowView from './WordFishKnowView';
-/*
+
 import WordBoatView from './WordBoatView';
 import WordBoatHowView from './WordBoatHowView';
 import WordBoatThinkView from './WordBoatThinkView';
 import WordBoatKnowView from './WordBoatKnowView';
-*/
+
 import WordLandView from './WordLandView';
 import WordLandHowView from './WordLandHowView';
 import WordLandThinkView from './WordLandThinkView';
@@ -79,7 +79,7 @@ export default class MainView extends Component {
       case 'word_fish_know':
         Component = WordFishKnowView;
         break;
-/*
+
       case 'word_boat':
         Component = WordBoatView;
         break;
@@ -92,7 +92,7 @@ export default class MainView extends Component {
       case 'word_boat_know':
         Component = WordBoatKnowView;
         break;
-*/
+
       case 'word_land':
         Component = WordLandView;
         break;
