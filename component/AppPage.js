@@ -85,6 +85,7 @@ export default class AppPage extends Component {
       characterImage = (
         <Image
           source={this.props.characterImage}
+          resizeMode="contain"
           style={styles.character} />
       );
     }

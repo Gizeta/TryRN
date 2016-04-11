@@ -80,6 +80,7 @@ export default class LessonView extends Component {
     this.onNavigateToWord3Page = this.onNavigateToWord3Page.bind(this);
     this.onNavigateToWord4Page = this.onNavigateToWord4Page.bind(this);
     this.onNavigateToWord5Page = this.onNavigateToWord5Page.bind(this);
+    this.onNavigateToTestPage = this.onNavigateToTestPage.bind(this);
   }
 
   render() {
@@ -87,6 +88,7 @@ export default class LessonView extends Component {
       <AppPage backgroundImage={require('../../../asset/day1/lesson2/bg.jpg')}>
         <TouchableOpacity
           activeOpacity={0.7}
+          onPress={this.onNavigateToTestPage}
           style={styles.buttonContainer}>
           <Image
             source={require('../../../asset/image/go2.png')}
@@ -145,5 +147,9 @@ export default class LessonView extends Component {
 
   onNavigateToWord5Page() {
     this.props.navigator.push({ name: 'word5' });
+  }
+
+  onNavigateToTestPage() {
+    this.props.navigator.push({ name: 'test_entrance' });
   }
 }

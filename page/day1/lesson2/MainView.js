@@ -30,6 +30,20 @@ import Word5HowView from './Word5HowView';
 import Word5ThinkView from './Word5ThinkView';
 import Word5KnowView from './Word5KnowView';
 
+import TestEntranceView from './TestEntranceView';
+import TestIntroView from './TestIntroView';
+import TestFailedView from './TestFailedView';
+import Test1View from './Test1View';
+import Test1BingoView from './Test1BingoView';
+import Test1FailedView from './Test1FailedView';
+import Test2View from './Test2View';
+import Test2BingoView from './Test2BingoView';
+import Test2FailedView from './Test2FailedView';
+import Test3View from './Test3View';
+import Test3BingoView from './Test3BingoView';
+import Test3FailedView from './Test3FailedView';
+import GoView from './GoView';
+
 export default class MainView extends Component {
   constructor(props) {
     super(props);
@@ -104,6 +118,46 @@ export default class MainView extends Component {
         break;
       case 'word5_know':
         Component = Word5KnowView;
+        break;
+
+      case 'test_entrance':
+        Component = TestEntranceView;
+        break;
+      case 'test_intro':
+        Component = TestIntroView;
+        break;
+      case 'test_failed':
+        Component = TestFailedView;
+        break;
+      case 'test1':
+        Component = Test1View;
+        break;
+      case 'test1_bingo':
+        Component = Test1BingoView;
+        break;
+      case 'test1_failed':
+        Component = Test1FailedView;
+        break;
+      case 'test2':
+        Component = Test2View;
+        break;
+      case 'test2_bingo':
+        Component = Test2BingoView;
+        break;
+      case 'test2_failed':
+        Component = Test2FailedView;
+        break;
+      case 'test3':
+        Component = Test3View;
+        break;
+      case 'test3_bingo':
+        Component = Test3BingoView;
+        break;
+      case 'test3_failed':
+        Component = Test3FailedView;
+        break;
+      case 'go':
+        Component = GoView;
         break;
       default:
         Component = LessonView;
