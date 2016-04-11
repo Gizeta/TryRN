@@ -44,7 +44,8 @@ export default class AppPage extends Component {
     hasSettingButton: React.PropTypes.bool,
     hasCharacter: React.PropTypes.bool,
     hasBackground: React.PropTypes.bool,
-    backgroundImage: React.PropTypes.number
+    backgroundImage: React.PropTypes.number,
+    characterImage: React.PropTypes.number
   };
 
   static defaultProps = {
@@ -52,7 +53,8 @@ export default class AppPage extends Component {
     hasSettingButton: true,
     hasCharacter: false,
     hasBackground: true,
-    backgroundImage: require('../asset/image/home/background.png')
+    backgroundImage: require('../asset/image/home/background.png'),
+    characterImage: require('../asset/image/character.png')
   };
 
   constructor(props) {
@@ -82,7 +84,7 @@ export default class AppPage extends Component {
     if (this.props.hasCharacter) {
       characterImage = (
         <Image
-          source={require('../asset/image/character.png')}
+          source={this.props.characterImage}
           style={styles.character} />
       );
     }
@@ -92,7 +94,7 @@ export default class AppPage extends Component {
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
-        <Image source={backgroundImage} style={styles.background} resizeMode="stretch">
+        <Image source={backgroundImage} style={[styles.background, this.props.backgroundStyle]} resizeMode="stretch">
           <View style={styles.content}>
             {this.props.children}
           </View>

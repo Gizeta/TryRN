@@ -13,6 +13,8 @@ import Lesson1_3View from '../../page/day1/lesson3/MainView';
 import Lesson1_4View from '../../page/day1/lesson4/MainView';
 import Lesson1_5View from '../../page/day1/lesson5/MainView';
 
+import NavigatorHelper from '../../util/NavigatorHelper';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +22,7 @@ export default class App extends Component {
 
   renderScene(route, navigator) {
     let Component = null;
+    NavigatorHelper.update(navigator);
     switch (route.name) {
       case 'home':
         Component = HomeView;

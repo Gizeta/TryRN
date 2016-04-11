@@ -128,6 +128,7 @@ export default class LessonView extends Component {
     this.onNavigateToFishPage = this.onNavigateToFishPage.bind(this);
     this.onNavigateToBoatPage = this.onNavigateToBoatPage.bind(this);
     this.onNavigateToLandPage = this.onNavigateToLandPage.bind(this);
+    this.onNavigateToTestPage = this.onNavigateToTestPage.bind(this);
   }
 
   render() {
@@ -184,6 +185,7 @@ export default class LessonView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.7}
+          onPress={this.onNavigateToTestPage}
           style={styles.buttonContainer}>
           <Image
             source={require('../../../asset/image/go.png')}
@@ -242,5 +244,9 @@ export default class LessonView extends Component {
 
   onNavigateToLandPage() {
     this.props.navigator.push({ name: 'word_land' });
+  }
+
+  onNavigateToTestPage() {
+    this.props.navigator.push({ name: 'test_entrance' });
   }
 }
