@@ -4,10 +4,12 @@ import React, {
   Image,
   StatusBar,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View
 } from 'react-native';
 import ViewSize from '../util/ScreenSize';
+import NavigatorHelper from '../util/NavigatorHelper';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,6 +37,49 @@ const styles = StyleSheet.create({
     bottom: 10,
     width: ViewSize.width * 0.25,
     height: ViewSize.width * 0.25 * 311 / 290
+  },
+  popUp: {
+    marginTop: -ViewSize.height * 0.75,
+    marginLeft: ViewSize.width * 0.15
+  },
+  popUpImg: {
+    width: ViewSize.width * 0.7,
+    height: ViewSize.height * 0.5,
+    opacity: 0.8
+  },
+  hbox: {
+    marginTop: -ViewSize.height * 0.5,
+    width: ViewSize.width * 0.7,
+    height: ViewSize.height * 0.5,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  item: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  storeImg: {
+    width: ViewSize.width * 0.15,
+    height: ViewSize.width * 0.15 * 170 / 157
+  },
+  text: {
+    color: 'black',
+    fontSize: 20
+  },
+  charaImg: {
+    width: ViewSize.width * 0.15,
+    height: ViewSize.width * 0.15 * 159 / 148
+  },
+  meImg: {
+    width: ViewSize.width * 0.15,
+    height: ViewSize.width * 0.15 * 140 / 141
+  },
+  packImg: {
+    width: ViewSize.width * 0.07,
+    height: ViewSize.width * 0.07 * 124 / 151,
+    position: 'absolute',
+    marginTop: -ViewSize.width * 0.1,
+    marginLeft: ViewSize.width * 0.09
   }
 });
 
@@ -59,13 +104,19 @@ export default class AppPage extends Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      isPopup: false
+    }
   }
 
   render() {
-    let backButton, settingButton, characterImage, backgroundImage;
+    let backButton, settingButton, characterImage, backgroundImage, popUp;
     if (this.props.hasSettingButton) {
       settingButton = (
-        <TouchableOpacity activeOpacity={0.6}>
+        <TouchableOpacity
+          onPress={this.onSettingButtonPress.bind(this)}
+          activeOpacity={0.6}>
           <Image
             source={require('../asset/image/component/setting.png')}
             style={styles.button} />
@@ -92,6 +143,47 @@ export default class AppPage extends Component {
     backgroundImage = this.props.hasBackground
       ? this.props.backgroundImage
       : require('../asset/image/transparent.png');
+    if (this.state.isPopup) {
+      popUp = (
+        <View style={styles.popUp}>
+          <Image
+            source={require('../asset/image/overlay.png')}
+            style={styles.popUpImg} />
+          <View style={styles.hbox}>
+            <TouchableOpacity
+              onPress={this.onNavigateToStore.bind(this)}
+              activeOpacity={0.6}
+              style={styles.item}>
+              <Image
+                source={require('../asset/image/store.png')}
+                style={styles.storeImg} />
+              <Text style={styles.text}>Store</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={this.onNavigateToPackage.bind(this)}
+              activeOpacity={0.6}
+              style={styles.item}>
+              <Image
+                source={require('../asset/image/character.png')}
+                style={styles.charaImg} />
+              <Text style={styles.text}>Peale's Bag</Text>
+              <Image
+                source={require('../asset/image/package.png')}
+                style={styles.packImg} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={this.onNavigateToMe.bind(this)}
+              activeOpacity={0.6}
+              style={styles.item}>
+              <Image
+                source={require('../asset/image/me.png')}
+                style={styles.meImg} />
+              <Text style={styles.text}>Me</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
@@ -105,7 +197,24 @@ export default class AppPage extends Component {
             {backButton}
           </View>
         </Image>
+        {popUp}
       </View>
     );
+  }
+
+  onSettingButtonPress() {
+    this.setState({ isPopup: !this.state.isPopup });
+  }
+
+  onNavigateToStore() {
+    NavigatorHelper.get().push({ name: 'shop' });
+  }
+
+  onNavigateToPackage() {
+    NavigatorHelper.get().push({ name: 'package' });
+  }
+
+  onNavigateToMe() {
+    NavigatorHelper.get().push({ name: 'me' });
   }
 }
