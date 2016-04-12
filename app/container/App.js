@@ -13,6 +13,9 @@ import Lesson1_3View from '../../page/day1/lesson3/MainView';
 import Lesson1_4View from '../../page/day1/lesson4/MainView';
 import Lesson1_5View from '../../page/day1/lesson5/MainView';
 
+import PackageView from '../../page/PackageView';
+import ShopView from '../../page/ShopView';
+
 import NavigatorHelper from '../../util/NavigatorHelper';
 
 export default class App extends Component {
@@ -50,6 +53,12 @@ export default class App extends Component {
         break;
       case 'lesson1_5':
         Component = Lesson1_5View;
+        break;
+      case 'package':
+        Component = PackageView;
+        break;
+      case 'shop':
+        Component = ShopView;
         break;
       default:
         Component = LoginView;
