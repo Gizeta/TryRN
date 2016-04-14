@@ -125,7 +125,9 @@ export default class AppPage extends Component {
     }
     if (this.props.hasBackButton) {
       backButton = (
-        <TouchableOpacity activeOpacity={0.6}>
+        <TouchableOpacity
+          onPress={this.onNavigateBack.bind(this)}
+          activeOpacity={0.6}>
           <Image
             source={require('../asset/image/component/back.png')}
             style={styles.button} />
@@ -216,5 +218,9 @@ export default class AppPage extends Component {
 
   onNavigateToMe() {
     NavigatorHelper.get().push({ name: 'me' });
+  }
+
+  onNavigateBack() {
+    NavigatorHelper.getCurrent().pop();
   }
 }

@@ -20,7 +20,7 @@ export default class TestEntranceView extends Component {
     super(props);
 
     setTimeout(() => {
-      this.props.navigator.push({ name: 'test_intro' });
+      this.props.navigator.replace({ name: 'test_intro' });
     }, 2000);
   }
 

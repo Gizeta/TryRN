@@ -94,6 +94,7 @@ export default class TestIntroView extends Component {
   }
 
   onNextButtonClick() {
-    NavigatorHelper.get().push({ name: 'test1' });
+    NavigatorHelper.destroy2();
+    NavigatorHelper.get().replace({ name: 'test1' });
   }
 }

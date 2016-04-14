@@ -21,7 +21,7 @@ export default class GoView extends Component {
     super(props);
 
     setTimeout(() => {
-      this.props.navigator.push({ name: 'go2' });
+      this.props.navigator.replace({ name: 'go2' });
     }, 2000);
   }
 

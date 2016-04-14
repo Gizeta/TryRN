@@ -21,7 +21,8 @@ export default class GoView extends Component {
     super(props);
 
     setTimeout(() => {
-      NavigatorHelper.get().push({ name: 'lesson1_2' });
+      NavigatorHelper.destroy2();
+      NavigatorHelper.get().replace({ name: 'lesson1_2' });
     }, 2000);
   }
 

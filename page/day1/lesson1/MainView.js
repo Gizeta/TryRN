@@ -44,6 +44,8 @@ import Test3BingoView from './Test3BingoView';
 import Test3FailedView from './Test3FailedView';
 import GoView from './GoView';
 
+import NavigatorHelper from '../../../util/NavigatorHelper';
+
 export default class MainView extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +53,7 @@ export default class MainView extends Component {
 
   renderScene(route, navigator) {
     let Component = null;
+    NavigatorHelper.update2(navigator);
     switch (route.name) {
       case 'lesson':
         Component = LessonView;
