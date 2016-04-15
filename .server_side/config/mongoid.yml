@@ -1,0 +1,13 @@
+development:
+  clients:
+    default:
+      database: try-rn
+      hosts:
+        - localhost:27017
+
+production:
+  clients:
+    default:
+      database: try-rn
+      hosts:
+        - localhost:27017
