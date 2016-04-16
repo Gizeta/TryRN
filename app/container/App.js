@@ -1,7 +1,9 @@
 import React, {
   Component,
-  Navigator
+  Navigator,
+  View
 } from 'react-native';
+import BusyIndicator from 'react-native-busy-indicator';
 
 import HomeView from '../../page/HomeView';
 import WelcomeView from '../../page/WelcomeView';
@@ -69,10 +71,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <Navigator
-        initialRoute={{ name: 'home' }}
-        configureScene={() => Navigator.SceneConfigs.FadeAndroid}
-        renderScene={this.renderScene} />
+      <View style={{ flex: 1 }}>
+        <Navigator
+          initialRoute={{ name: 'home' }}
+          configureScene={() => Navigator.SceneConfigs.FadeAndroid}
+          renderScene={this.renderScene} />
+        <BusyIndicator />
+      </View>
     );
   }
 }

@@ -1,6 +1,6 @@
 require 'json'
 
-post '/login' do
+get '/login' do
   username = params["username"]
   password = params["password"]
   content_type :json
@@ -19,7 +19,7 @@ post '/login' do
   return result.to_json
 end
 
-post '/reg' do
+get '/reg' do
   username = params["username"]
   password = params["password"]
   content_type :json

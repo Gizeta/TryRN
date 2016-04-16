@@ -6,11 +6,13 @@ import React, {
   TouchableOpacity,
   View
 } from 'react-native';
+import loaderHandler from 'react-native-busy-indicator/LoaderHandler';
 import { connect } from 'react-redux';
 
 import AppPage from '../component/AppPage';
 import TextInputWithIcon from '../component/TextInputWithIcon';
 import ViewSize from '../util/ScreenSize';
+import AlertHelper from '../util/AlertHelper';
 
 import * as userAction from '../app/action/user';
 
@@ -55,6 +57,12 @@ class LoginView extends Component {
   }
 
   render() {
+    if (this.props.state.get("name") != "") {
+      setTimeout(() => {
+        this.props.navigator.push({ name: 'map' });
+      }, 0);
+    }
+
     return (
       <AppPage hasBackButton={false} hasSettingButton={false} hasCharacter={true}>
         <View style={containerStyles.main}>
@@ -75,14 +83,14 @@ class LoginView extends Component {
                 value={this.state.username} />
             </View>
             <View style={containerStyles.append}>
-              <TouchableOpacity
+              {/*<TouchableOpacity
                 activeOpacity={0.3}>
                 <Text style={styles.text}>忘记登录密码？</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.3}>
                 <Text style={styles.text}>注册</Text>
-              </TouchableOpacity>
+              </TouchableOpacity>*/}
             </View>
             <View style={containerStyles.button}>
               <TouchableOpacity
@@ -101,9 +109,23 @@ class LoginView extends Component {
 
   onLoginButtonClick() {
     let { dispatch } = this.props;
-    dispatch(userAction.getUserInfo(this.state.username, this.state.password));
 
-    this.props.navigator.push({ name: 'map' });
+    if (this.state.username == "" || this.state.password == "") {
+      AlertHelper.alert("用户名或密码不能为空");
+      return;
+    }
+    if (/[!\?&\/\\'"]/.test(this.state.username)) {
+      AlertHelper.alert("用户名不能含有特殊符号");
+      return;
+    }
+    if (this.state.username == "test" && this.state.password == "test") {
+      AlertHelper.alert("作为测试用户登录");
+      dispatch(userAction.getUserInfo(this.state.username));
+      return;
+    }
+
+    loaderHandler.showLoader("Connecting");
+    dispatch(userAction.getUserInfoAsync(this.state.username, this.state.password));
   }
 }
 
