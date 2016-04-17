@@ -39,7 +39,7 @@ export default class WordLandKnowView extends Component {
         <Text style={styles.content}>
           <Text style={{ fontSize: 32 }}>应该知道这些</Text>
           <Text style={{ fontSize: 20 }}>{"\n"}{"\n"}</Text>
-          <Text style={{ fontSize: 26, color: 'red' }}>待查找</Text>
+          <Text style={{ fontSize: 26 }}>目前还没有哦～</Text>
         </Text>
       </WordDetailPage>
     );

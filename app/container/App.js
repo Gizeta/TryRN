@@ -73,7 +73,7 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1 }}>
         <Navigator
-          initialRoute={{ name: 'home' }}
+          initialRoute={{ name: 'map' }}
           configureScene={() => Navigator.SceneConfigs.FadeAndroid}
           renderScene={this.renderScene} />
         <BusyIndicator />

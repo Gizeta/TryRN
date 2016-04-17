@@ -32,30 +32,30 @@ let styles = StyleSheet.create({
   },
   text1: {
     marginLeft: -ViewSize.height * 1812 / 628,
-    marginTop: -ViewSize.height * 14 / 628,
+    marginTop: ViewSize.height * 75 / 628,
     transform: [{rotate: '6deg'}]
   },
   text2: {
     marginLeft: -ViewSize.height * 1489 / 628,
-    marginTop: -ViewSize.height * 28 / 628
+    marginTop: -ViewSize.height * 115 / 628
   },
   text3: {
     marginLeft: -ViewSize.height * 1170 / 628,
-    marginTop: -ViewSize.height * 56 / 628,
+    marginTop: -ViewSize.height * 95 / 628,
     transform: [{rotate: '356deg'}]
   },
   text4: {
     marginLeft: -ViewSize.height * 820 / 628,
-    marginTop: -ViewSize.height * 56 / 628,
+    marginTop: ViewSize.height * 5 / 628,
     transform: [{rotate: '4deg'}]
   },
   text5: {
     marginLeft: -ViewSize.height * 515 / 628,
-    marginTop: -ViewSize.height * 44 / 628
+    marginTop: -ViewSize.height * 70 / 628
   },
   text6: {
     marginLeft: -ViewSize.height * 180 / 628,
-    marginTop: -ViewSize.height * 75 / 628,
+    marginTop: -ViewSize.height * 78 / 628,
     transform: [{rotate: '354deg'}]
   }
 });
