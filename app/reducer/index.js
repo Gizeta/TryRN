@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux-immutablejs';
 import user from './user';
+import course from './course';
+import pack from './package';
 
 const rootReducer = combineReducers({
-  user
+  user,
+  course,
+  pack
 });
 
 export default rootReducer;

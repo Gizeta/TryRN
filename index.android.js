@@ -13,11 +13,18 @@ const initialState = Immutable.fromJS({
   user: {
     name: ''
   },
-  courses: {
-    day1: 0,
-    day2: 0
+  course: {
+    progress: 1,
+    day1: {
+      progress: 0,
+      test: 0
+    },
+    reviewList: []
   },
-  items: []
+  pack: {
+    coin: 0,
+    item: []
+  }
 });
 
 class TryRN extends Component {

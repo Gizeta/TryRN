@@ -54,8 +54,11 @@ export default class MainView extends Component {
   renderScene(route, navigator) {
     let Component = null;
     NavigatorHelper.update2(navigator);
+    let params1 = '';
+    let params2 = '';
     switch (route.name) {
       case 'lesson':
+        params1 = `key=day1&action=progress&value=1`;
         Component = LessonView;
         break;
       case 'word_sunny':
@@ -133,6 +136,7 @@ export default class MainView extends Component {
         Component = TestFailedView;
         break;
       case 'test1':
+        params1 = `key=day1&action=test&value=1`;
         Component = Test1View;
         break;
       case 'test1_bingo':
@@ -142,6 +146,7 @@ export default class MainView extends Component {
         Component = Test1FailedView;
         break;
       case 'test2':
+        params1 = `key=day1&action=test&value=2`;
         Component = Test2View;
         break;
       case 'test2_bingo':
@@ -151,6 +156,7 @@ export default class MainView extends Component {
         Component = Test2FailedView;
         break;
       case 'test3':
+        params1 = `key=day1&action=test&value=3`;
         Component = Test3View;
         break;
       case 'test3_bingo':
@@ -160,12 +166,30 @@ export default class MainView extends Component {
         Component = Test3FailedView;
         break;
       case 'go':
+        params1 = `key=day1&action=test&value=0`;
         Component = GoView;
         break;
       default:
         Component = LessonView;
         break;
     }
+
+    /*if (params1 != '') {
+      fetch(`http://try-rn.gizeta.me/course/update?username=${this.props.state.user.name}&${params1}`, {
+        method: 'GET',
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      });
+    }
+    if (params2 != '') {
+      fetch(`http://try-rn.gizeta.me/package/update?username=${this.props.state.user.name}&${params2}`, {
+        method: 'GET',
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      });
+    }*/
     return <Component navigator={navigator} />;
   }
 
